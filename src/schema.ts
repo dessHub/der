@@ -2,8 +2,24 @@ import {gql} from 'apollo-server';
 
 // schema
 export const schema = gql`
+  type Categories {
+    categories: [String]
+  }
+
+  type Joke {
+    id: ID
+    created_at: String
+    icon_url: String
+    updated_at: String
+    url: String
+    value: String
+    categories: [String]
+  }
+
   type Query {
-    test: String!
+    joke: Joke
+    category: Categories
+    random(category: String): Joke
   }
 `;
 
