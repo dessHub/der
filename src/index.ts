@@ -17,6 +17,7 @@ const server = new ApolloServer({
 
 server.applyMiddleware({app, path});
 
+/* tslint:disable no-console */
 app.listen(port, (): void =>
   console.log(
     `Server running at http://localhost:${port}${path}`,

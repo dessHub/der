@@ -3,15 +3,15 @@ interface Args {
 }
 
 interface Categories {
-  categories: Array<String>
+  categories: string[]
 }
 
 interface Joke {
   id: any
-  created_at: String
-  icon_url: String
-  updated_at: String
-  url: String
-  value: String
-  categories: [String]
+  created_at: string
+  icon_url: string
+  updated_at: string
+  url: string
+  value: string
+  categories: [string]
 }
