@@ -1,7 +1,6 @@
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
 import cors from 'cors';
-import debug from 'debug';
 import { schema } from './schema';
 import { resolvers } from './resolvers';
 
@@ -18,10 +17,8 @@ const server = new ApolloServer({
 
 server.applyMiddleware({app, path});
 
-const logger = debug('log');
-
 app.listen(port, (): void =>
-  logger(
+  console.log(
     `Server running at http://localhost:${port}${path}`,
   ),
 );
