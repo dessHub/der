@@ -8,14 +8,14 @@ export const resolvers = {
       return new Promise((resolve, reject) => {
         fetch(`${url}jokes/random`)
           .then((res: { json: () => any; }) => res.json())
-          .then((data: any) => resolve(data));
+          .then((data: Joke) => resolve(data));
       });
     },
     category() {
       return new Promise((resolve, reject) => {
         fetch(`${url}jokes/categories`)
           .then((res: { json: () => any; }) => res.json())
-          .then((categories: any) => {
+          .then((categories: Categories) => {
             resolve({categories});
           });
       });
@@ -26,7 +26,7 @@ export const resolvers = {
           `${url}jokes/random?category=${args.category}`,
         )
           .then((res: { json: () => any; }) => res.json())
-          .then((data: any) => resolve(data));
+          .then((data: Joke) => resolve(data));
       });
     },
   },
